@@ -1,0 +1,623 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="Jon Sporring">
+  <meta name="GENERATOR"
+ content="Mozilla/4.7C-SGI [en] (X11; I; IRIX64 6.5 IP27) [Netscape]">
+  <title>The DIKU, 3DLab, and ITU Matlab Repository</title>
+</head>
+<body>
+<h1> The DIKU, 3DLab, and ITU Matlab Repository</h1>
+<hr width="100%"> <br>
+This is a collection of Matlab functions programmed by a number of
+people at DIKU, 3DLab, ITU, and Eindhoven. This site is intended to
+contain the most resent versions of these shared Matlab functions. This
+is an experimental setup. If you have comments or would like to add or
+update a function, please mail me at: <a href="mailto:sporring@diku.dk">sporring@diku.dk</a>.
+<p>Most functions are carefully documented using embedded comments in
+the beginning of the file. Hence you may learn more about the functions
+by viewing the M-code. The comments uses the standard Matlab style:
+First line is the function head followed by the help section used by
+the
+Matlab help command. An example of a properly written help section is
+given in <a href="src/scale.m">scale.m</a>. First line contains a
+one-line description, followed by an empty line, and ending with the
+body of the help text. </p>
+<p>All the files are gathered in a single file available as a zip file, <a
+ href="all.zip">all.zip</a>. It is also possible to obtain single
+files by clicking below. </p>
+<h3> Linear Scale-Space functions</h3>
+These functions implements the Gaussian scale-space in various ways.
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/scale.m">scale.m</a></td>
+      <td>Linear Scalespace for 1 and 2 dimensions using Fourier
+Implementation.</td>
+      <td>April 2001</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/scale2.m">scale2.m</a></td>
+      <td>Similar to <b>scale.m</b>.&nbsp; Kept for compatibility
+reasons</td>
+      <td>May 2000</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/scalen.m">scalen.m</a></td>
+      <td>Linear Scalespace for any dimensions using Fourier
+Implementation.</td>
+      <td>Feb 2000</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/scalespace.m">scalespace.m</a></td>
+      <td>A stack of images from the Linear Scalespace using <b>scale.m</b>.</td>
+      <td>Jan 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/scalevw.m">scalevw.m</a></td>
+      <td>Linear Scalespace using <b>scale.m</b> implementing gauge
+derivatives.</td>
+      <td>Nov 2000</td>
+      <td>Ole Fogh Olsen.</td>
+    </tr>
+  </tbody>
+</table>
+<h3> Non-linear Scale-Space functions</h3>
+These functions were part of Joachim Weickert's course May 1998 at
+DIKU. Some of these functions were written in C by Weickert, except for
+some key elements which were completed by Jon Sporring as part of the
+course. Sporring has later wrapped the C-code in a mexfunction.
+Therefore, the M-files are just the Matlab help-text, and the real code
+is the mex-program with prefix .c. An example of a setup file of the
+mex
+(actually C) compiler is given in <a href="src/mexopts.sh">mexopts.sh</a>.
+The test scripts uses the image <a href="src/noise.tif">noise.tif</a>.
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/ild.m">ild.m</a></td>
+      <td>Isotropic Linear Diffusion</td>
+      <td>Jan 2001</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/ind.m">ind.m</a></td>
+      <td>Isotropic Nonlinear Diffusion using <b>ild.m</b></td>
+      <td>Oct 2000</td>
+      <td>Joachim Weickert &amp; Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/ind_aos.c">ind_aos.c</a> <br>
+      <a href="src/ind_aos.m">ind_aos.m</a> <br>
+      <a href="src/ind_aostest.m">ind_aostest.m</a></td>
+      <td>Isotropic Nonlinear Diffusion using Additive Operator
+Splitting</td>
+      <td>May 1998</td>
+      <td>Joachim Weickert &amp; Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/eed.m">eed.m</a></td>
+      <td>Edge-enhancing Anisotropic Diffusion using <b>ild.m</b></td>
+      <td>Oct 2000</td>
+      <td>Joachim Weickert &amp; Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/ced.m">ced.m</a></td>
+      <td>Coherence Enhanced Diffusion using <b>ild.m</b></td>
+      <td>Oct 2000</td>
+      <td>Joachim Weickert &amp; Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/erosion.m">erosion.m</a></td>
+      <td>Morphological Erosion</td>
+      <td>Oct 2000</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/dilation.m">dilation.m</a></td>
+      <td>Morphological Dilation</td>
+      <td>Oct 2000</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/mcm.m">mcm.m</a></td>
+      <td>Mean Curvature Motion</td>
+      <td>Oct 2000</td>
+      <td>Joachim Weickert &amp; Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/amss.m">amss.m</a></td>
+      <td>Affine Morphological Scalespace</td>
+      <td>Oct 2000</td>
+      <td>Joachim Weickert &amp; Jon Sporring.</td>
+    </tr>
+  </tbody>
+</table>
+<h3>General Filtering Tools</h3>
+<table style="width: 100%; text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><a href="src/nlfilter3.m">nlfilter3.m</a><br>
+      </td>
+      <td style="vertical-align: top;">3d extension of nlfilter2: any
+	block filtering of a 3 dimensional image<br>
+      </td>
+      <td style="vertical-align: top;">Nov 2015<br>
+      </td>
+      <td style="vertical-align: top;">Jon Sporring<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>Medical Image Processing Tools</h3>
+<table style="width: 100%; text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><a href="src/biasCorrect.m">biasCorrect.m</a><br>
+      </td>
+      <td style="vertical-align: top;">Estimate the bias field for a 2
+	dimensional matrix<br>
+      </td>
+      <td style="vertical-align: top;">Oct 2014<br>
+      </td>
+      <td style="vertical-align: top;">Jon Sporring<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a href="src/biasCorrect3d.m">biasCorrect3d.m</a><br>
+      </td>
+      <td style="vertical-align: top;">Estimate the bias field for a 3
+	dimensional matrix<br>
+      </td>
+      <td style="vertical-align: top;">Dec 2015<br>
+      </td>
+      <td style="vertical-align: top;">Jon Sporring<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>PDE Methods</h3>
+<table style="width: 100%; text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><a href="src/sgnDstFromImg.m">sgnDstFromImg.m</a><br>
+      </td>
+      <td style="vertical-align: top;">Signed Distance Function<br>
+      </td>
+      <td style="vertical-align: top;">Dec 2004<br>
+      </td>
+      <td style="vertical-align: top;">Henrik Dohlmann, Kenny Erleben,
+&amp; Jon Sporring<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a href="src/chanVese.m">chanVese.m</a><br>
+      </td>
+      <td style="vertical-align: top;">Chan Vese segmenetation<br>
+      </td>
+      <td style="vertical-align: top;">Dec 2004<br>
+      </td>
+      <td style="vertical-align: top;">Jon Sporring<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><a href="src/054.tif">054.tif</a><br>
+      </td>
+      <td style="vertical-align: top;">Testdata for chanVese.m<br>
+      </td>
+      <td style="vertical-align: top;">Dec 2004<br>
+      </td>
+      <td style="vertical-align: top;">Jon Sporrinng<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>Differential Geometry<br>
+</h3>
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/finitediff.m">finitediff.m</a><br>
+      </td>
+      <td>Calculate the finite difference stencil in 1 dimension</td>
+      <td>Nov 2003</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/zerocrossing.m">zerocrossing.m</a></td>
+      <td>Finds the fractional indices of the zerocrossings of a
+sampled function</td>
+      <td>Jan 1996</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/crossings.m">crossings.m</a></td>
+      <td>Finds the points where two images are identically equal to
+zero.</td>
+      <td>Jan 1996</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/curvature.m">curvature.m</a></td>
+      <td>Calculates the Gaussian and Mean curvature of an image using <b>scale.m</b>.</td>
+      <td>Nov 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/isocurvature.m">isocurvature.m</a></td>
+      <td>Calculates the Isophote curvature using <b>scale.m</b>.</td>
+      <td>Jan 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/isocurvature2.m">isocurvature2.m</a></td>
+      <td>Calculates the Isophote curvature using <b>scale.m</b>.</td>
+      <td>Jan 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/dexpr.m">dexpr.m</a> <br>
+      <a href="src/tokens.def">tokens.def</a></td>
+      <td>Parses and computes a differential expression using <b>scale.m</b>.</td>
+      <td>March 2001</td>
+      <td>Martin Lillholm</td>
+    </tr>
+    <tr>
+      <td><a href="src/snake.m">snake.m</a></td>
+      <td>Implementation of Kass's et al. snake<br>
+      </td>
+      <td>Dec 2003</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/snakeTest.m">snakeTest.m</a></td>
+      <td>A demonstration program for snake.m<br>
+      </td>
+      <td>Dec 2003</td>
+      <td>Jon Sporring</td>
+    </tr>
+  </tbody>
+</table>
+<h3> Statistical Distributions</h3>
+Function to produce various parameterized distributions.
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/beta.m">beta.m</a></td>
+      <td>The beta distribution<br>
+      </td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/binomial.m">binomial.m</a></td>
+      <td>The binomial distribution<br>
+      </td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/chi.m">chi.m</a></td>
+      <td>The X^2 distribution<br>
+      </td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/exponential.m">exponential.m</a></td>
+      <td>The exponential distribution<br>
+      </td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/geometric.m">geometric.m</a></td>
+      <td>The geometric distribtution<br>
+      </td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/lognormal.m">lognormal.m</a></td>
+      <td>The log-normal distribtution<br>
+      </td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/normal.m">normal.m</a></td>
+      <td>The normal or Gaussian distribution<br>
+      </td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/poisson.m">poisson.m</a></td>
+      <td>The Poisson distribtuion<br>
+      </td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Statistical Estimations<br>
+</h3>
+Function to produce various parameterized distributions.
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/kmean.m">kmean.m</a></td>
+      <td>A slow but precise kmean algorithm.</td>
+      <td>Jan 1994</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/kmean2.m">kmean2.m</a></td>
+      <td>Uses kmean.m with random starting points.</td>
+      <td>Jan 1994</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/localhist.m">localhist.m</a></td>
+      <td>Calculates the Gaussian weighted local histogram in a point
+of an image using <b>scale.m</b>.</td>
+      <td>Dec 1999</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/localhist2.m">localhist2.m</a></td>
+      <td>Calculates all the Gaussian weighted local histograms in
+image using <b>localhist.m</b>.</td>
+      <td>Jun 2001</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/guilocalhist2.m">guilocalhist2.m</a></td>
+      <td>A stand alone graphical user interface to <b>localhist2.m</b>.</td>
+      <td>Oct 2000</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/cooccurrence.m">cooccurrence.m</a></td>
+      <td>Calculates the cooccurrence matrix for a gray-valued image.</td>
+      <td>Jan 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/emGaussianMixture.m">emGaussianMixture.m</a></td>
+      <td>Expectation Maximization estimation for a Mixture of Gaussian
+Model<br>
+      </td>
+      <td>Nov 2003</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/emGaussianMixtureTest.m">emGaussianMixtureTest.m</a></td>
+      <td>A demo script for emGaussianMixture.m<br>
+      </td>
+      <td>Nov 2003<br>
+      </td>
+      <td>Jon Sporring</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Stochastic Images<br>
+</h3>
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/fbm_image.m">fbm_image.m</a></td>
+      <td>Generate a randomly chosen Fractal Brownian Motion image.</td>
+      <td>Jan 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/rnd_paste_image.m">rnd_paste_image.m</a></td>
+      <td>Generate a random image of pasted sub-images.</td>
+      <td>Jan 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/RandomIsingImage.m">RandomIsingImage.m</a></td>
+      <td>Generate a random image under the Ising Gibbs Random Field
+model.</td>
+      <td>Dec 2003</td>
+      <td>Jon Sporring</td>
+    </tr>
+  </tbody>
+</table>
+<h3> Information Theory and Multifractals</h3>
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/uni_length.m">uni_length.m</a></td>
+      <td>Calculate the code length of the Universal Distribution of
+Integers.</td>
+      <td>Jan 1996</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/entropy.m">entropy.m</a></td>
+      <td>Calculate the entropy of a distribution.</td>
+      <td>Jan 1996</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/information.m">information.m</a></td>
+      <td>Calculate the generalized-entropy of a distribution.</td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/information_scale.m">information_scale.m</a></td>
+      <td>Calculate the generalized-entropy of a distribution over a
+number of scales using <b>scale.m</b>.</td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/inf2spect.m">inf2spect.m</a></td>
+      <td>Transform generalized-entropies to a multifractal spectrum.</td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+    <tr>
+      <td><a href="src/spectrum.m">spectrum.m</a></td>
+      <td>Calculate the multifractal spectrum a distribution using <b>inf2spect.m</b>
+and <b>information_scale.m</b>.</td>
+      <td>May 1997</td>
+      <td>Jon Sporring</td>
+    </tr>
+  </tbody>
+</table>
+<h3> Contourc.m list functions</h3>
+These functions may also be used to parse contourc.m list, and they
+implement a general list of vectors of arbitray dimension.
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/list_concat.m">list_concat.m</a></td>
+      <td>Concatenate two lists.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_delete.m">list_delete.m</a></td>
+      <td>Delete element from list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_first.m">list_first.m</a></td>
+      <td>Get index of first element in list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_forall.m">list_forall.m</a></td>
+      <td>Map function onto all elements of list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_get.m">list_get.m</a></td>
+      <td>Get element in list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_get_attributes.m">list_get_attributes.m</a></td>
+      <td>Get attributes of element.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_getn.m">list_getn.m</a></td>
+      <td>Get n'th element in list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_insert.m">list_insert.m</a></td>
+      <td>Insert element in list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_last.m">list_last.m</a></td>
+      <td>Get last element of list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_mat2vec.m">list_mat2vec.m</a></td>
+      <td><br>
+      </td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_n.m">list_n.m</a></td>
+      <td>Get index of n'th element in list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_next.m">list_next.m</a></td>
+      <td>Get index of next element in list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_set_attributes.m">list_set_attributes.m</a></td>
+      <td>Set attributes of element in list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_size.m">list_size.m</a></td>
+      <td>Get number of elements in list.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_toCell.m">list_toCell.m</a></td>
+      <td>Convert a list to a cell-array.</td>
+      <td>July 2014</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_valid_pointer.m">list_valid_pointer.m</a></td>
+      <td>Check for valid index.</td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/list_vec2mat.m">list_vec2mat.m</a></td>
+      <td><br>
+      </td>
+      <td>Mar 1997</td>
+      <td>Jon Sporring.</td>
+    </tr>
+  </tbody>
+</table>
+<h3> Image i/o functions</h3>
+These DIKU mex-functions require the DIKU image library to be compiled.
+Conversely, the HIPS reader hacks the HIPS format and should therefore
+be used with care. It is mainly intended as an example.
+<table border="1" cellspacing="0">
+  <tbody>
+    <tr>
+      <td><a href="src/dikuread.c">dikuread.c</a> <br>
+      <a href="src/dikuread.m">dikuread.m</a></td>
+      <td>Input a DIKU image from disk using <b>the DIKU libray</b>.</td>
+      <td>Mar 1996</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/dikuwrite.c">dikuwrite.c</a> <br>
+      <a href="src/dikuwrite.m">dikuwrite.m</a></td>
+      <td>Output a DIKU image to disk using <b>the DIKU libray</b>.</td>
+      <td>Mar 1996</td>
+      <td>Jon Sporring.</td>
+    </tr>
+    <tr>
+      <td><a href="src/hipsread.c">hipsread.c</a> <br>
+      <a href="src/hipsread.m">hipsread.m</a></td>
+      <td>Read a HIPS image from disk.</td>
+      <td>Oct 2000</td>
+      <td>Jon Sporring.</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

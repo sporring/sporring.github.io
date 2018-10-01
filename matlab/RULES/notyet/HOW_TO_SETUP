@@ -1,0 +1,4 @@
+#DEFINE MATLABPATH TO POINT TO THESE DIRECTORIES
+
+setenv MPBASE /afs/alm/cs/compression/public/sporring/matlab
+setenv MATLABPATH ${MPBASE}/list:${MPBASE}/imtools:${MPBASE}/inftools:${MPBASE}/statistic:${MPBASE}/misc:${MPBASE}/blobs
