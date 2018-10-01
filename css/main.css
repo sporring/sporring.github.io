@@ -41,3 +41,13 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+div.publication { 
+	/*background-color:"E0E0E0";*/
+	/*font-size:small;*/
+	margin-bottom:1em;
+	text-indent:-3em;
+	margin-left:3em;
+	display:block;
+	/*font-family:arial,sans-serif;*/
+}
