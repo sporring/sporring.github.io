@@ -28,17 +28,13 @@ p {
     line-height: 1.4em;
     color: #333;
 }
+li {
+        font-size: 1.5em;
+}
+
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
-}
-
-ul {
-    font-size: 1.5em;
-}
-
-li {
-    font-size: 1.5em;
 }
 
 ul.posts { 
@@ -49,7 +45,6 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
-
 div.publication { 
 	/*background-color:"E0E0E0";*/
 	/*font-size:small;*/
