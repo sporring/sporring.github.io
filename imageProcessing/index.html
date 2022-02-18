@@ -7,7 +7,7 @@
 </head>
 <body>
   <h2>Fourier Transformation Examples</h2>
-  <p>The Fourier transform is a fundamental tool for understanding signal and image content, modelling, and filter design. On this page you will find a number of simple examples illustrating simple relations between signal and images and their corresponding fourier transform. The examples are made in Matlab R2021b. The Fourier specturm is the function of lengths of the complex elements in the Fourier transform. In Matlab this is calculated using the abs function. Also, in all examples, the fftshift function has been used to reorder the output of the fft function, such that the origin is in the center of the signal or image.</p>
+  <p>The Fourier transform is a fundamental tool for understanding signal and image content, modeling, and filter design. On this page, you will find some simple examples illustrating simple relations between signal and images and their corresponding Fourier transform. The examples are made in Matlab R2021b. The Fourier spectrum is the function of lengths of the complex elements in the Fourier transform. In Matlab, this is calculated using the abs function. Also, in all examples, the fftshift function has been used to reorder the output of the fft function, such that the origin is in the center of the signal or image.</p>
 
   <h3>Approximating a 1 dimensional (1D) box function with limited frequencies.</h3>
   <img src="images/freq.gif" alt="Frequency approximation of a box function in 1D" class="center">
@@ -23,7 +23,7 @@
 
   <h3>The Fourier transformation implies periodicity, and hence, images are seen to lie on a torus</h3>
   <img src="images/imageWarp.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>A consequence of Fourier analysis is that images are modelled as being periodic. Hence, the rightmost pixel's right neighbour is its leftmost, and the topmost top neighbour is the bottom most. Note that this animation correctly illustrates the topological relations of a flat image living on a torus, but the local distances are warped on the torus as compared to the flat image.</p>
+  <p>A consequence of Fourier analysis is that images are modeled as being periodic. Hence, the right-most pixel's right neighbor is its left-most, and the top-most top neighbor is the bottom-most. Note that this animation correctly illustrates the topological relations of a flat image living on a torus, but the local distances are warped on the torus as compared to the flat image.</p>
 
   <h3>A cosine wave corresponds to two symmetrical peaks in the Fourier domain</h3>
   <img src="images/noise.gif" alt="Frequency approximation of a box function in 1D" class="center">
@@ -31,19 +31,19 @@
 
   <h3>Smoothing an image in the spatial domain removes high frequencies in the frequency domain</h3>
   <img src="images/smooth.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>A consequence of the convolution theorem, Fourier(f*g) = Fourier(f)Fourier(g). And since the fourier transform of a Gaussian is another Gaussian with the inverse width, smoothing with a Gaussian of width s in the spatial domain is the same as multiplying in the Fourier domain with a Gaussian of width 1/s. Hence, as seen here, a little smoothing removes few frequencies, but a lot removes a many.</p>
+  <p>A consequence of the convolution theorem, Fourier(f*g) = Fourier(f)Fourier(g). And since the Fourier transform of a Gaussian is another Gaussian with the inverse width, smoothing with a Gaussian of width s in the spatial domain is the same as multiplying in the Fourier domain with a Gaussian of width 1/s. Hence, as seen here, a little smoothing removes a few frequencies, but a lot removes a many.</p>
 
   <h3>Translating a box (on the torus) does not change the spectrum</h3>
   <img src="images/translate.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>Fourier transformation considers signals as periodic. A consequence is that the neighbour of the rightmost pixel is the leftmost pixel at the same height. Hence, here we translate a box horisontally, and we see that the Fourier spectrum is not changed.</p>
+  <p>Fourier transformation considers signals as periodic. A consequence is that the neighbor of the rightmost pixel is the leftmost pixel at the same height. Hence, here we translate a box horizontally, and we see that the Fourier spectrum is not changed.</p>
 
   <h3>Rotating a box rotates its spectrum.</h3>
   <img src="images/rotate.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>Each point in the Fourier domain corresponds to a plannar wave in the spatial domain. Hence, rotating a box in the spatial domain gives a similar rotation in the Fourier domain.</p>
+  <p>Each point in the Fourier domain corresponds to a planar wave in the spatial domain. Hence, rotating a box in the spatial domain gives a similar rotation in the Fourier domain.</p>
 
   <h3>The influence of the length and angle on the image</h3>
   <img src="images/channel.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
-  <p>This is not an animated gif. Replacing the lenght of a Fourier transform of an image with a generic exp(-r) function does not completely destroy the image. However, replacing the angle component with independently and identically distributed noise does.</p>
+  <p>This is not an animated gif. Replacing the length of a Fourier transform of an image with a generic exp(-r) function does not completely destroy the image. However, replacing the angle component with independently and identically distributed noise does.</p>
 
   <h3>Aliasing - waves that cannot be distiquished when sampling</h3>
   <img src="images/nyquist.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
