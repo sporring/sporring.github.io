@@ -17,33 +17,33 @@
   <img src="images/boxSize.gif" alt="Frequency approximation of a box function in 1D" class="center">
   <p>The Fourier transform of a box function is a sinc function (sinc(x)=sin(x)/x), and the wavelength is proportional to the width of the box function. The Fourier transform assumes the signal to be periodic and a horizontal translation of the box does not change its Fourier spectrum.</p>
   
-  <h3>...</h3>
+  <h3>The Fourier transformation of a Gauss function is also a Gauss function</h3>
   <img src="images/gauss.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>...</p>
+  <p>The Gauss function f(x) = exp(-x^2/(2 s^2))/sqrt(2 pi s^2), here of width s, is unqiue, since its Fourier transform, F, is also a Gauss function. The transformed has a width 1/s. Since F(0) = int f(x) dx, if the integral of f is constant then integral of F is not.</p>
 
-  <h3>...</h3>
+  <h3>The Fourier transformation implies periodicity, and hence, images are seen to lie on a torus</h3>
   <img src="images/imageWarp.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>...</p>
+  <p>A consequence of Fourier analysis is that images are modelled as being periodic. Hence, the rightmost pixel's right neighbour is its leftmost, and the topmost top neighbour is the bottom most. Note that this animation correctly illustrates the topological relations of a flat image living on a torus, but the local distances are warped on the torus as compared to the flat image.</p>
 
-  <h3>...</h3>
+  <h3>A cosine wave corresponds to two symmetrical peaks in the Fourier domain</h3>
   <img src="images/noise.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>...</p>
+  <p>An image with an added cosine wave will have 2 symmetrical peaks in the Fourier domain. Their location corresponds to the direction of the corresponding wave in the image, and the distance from the center in the Fourier domain corresponds inversely to the wavelength in the spatial domain.</p>
 
-  <h3>...</h3>
-  <img src="images/rotate.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>...</p>
-
-  <h3>...</h3>
+  <h3>Smoothing an image in the spatial domain removes high frequencies in the frequency domain</h3>
   <img src="images/smooth.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>...</p>
+  <p>A consequence of the convolution theorem, Fourier(f*g) = Fourier(f)Fourier(g). And since the fourier transform of a Gaussian is another Gaussian with the inverse width, smoothing with a Gaussian of width s in the spatial domain is the same as multiplying in the Fourier domain with a Gaussian of width 1/s. Hence, as seen here, a little smoothing removes few frequencies, but a lot removes a many.</p>
 
-  <h3>...</h3>
+  <h3>Translating a box (on the torus) does not change the spectrum</h3>
   <img src="images/translate.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>...</p>
+  <p>Fourier transformation considers signals as periodic. A consequence is that the neighbour of the rightmost pixel is the leftmost pixel at the same height. Hence, here we translate a box horisontally, and we see that the Fourier spectrum is not changed.</p>
 
-  <h3>...</h3>
-  <img src="images/channel.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>...</p>
+  <h3>Rotating a box rotates its spectrum.</h3>
+  <img src="images/rotate.gif" alt="Frequency approximation of a box function in 1D" class="center">
+  <p>Each point in the Fourier domain corresponds to a plannar wave in the spatial domain. Hence, rotating a box in the spatial domain gives a similar rotation in the Fourier domain.</p>
+
+  <h3>The influence of the length and angle on the image</h3>
+  <img src="images/channel.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
+  <p>Replacing the lenght of a Fourier transform of an image with a generic exp(-r) function does not completely destroy the image. However, replacing the angle component with independently and identically distributed noise does.</p>
 
   <footer>
   Jon Sporring, Professor, Ph.D., University of Copenhagen, <a href="mailto:sporring@di.ku.dk">sporring@di.ku.dk</a>, <a href="https://github.com/sporring">github.com/sporring</a>, <a href="https://orcid.org/0000-0003-1261-6702">ORCID: 0000-0003-1261-6702</a></td></tr>
