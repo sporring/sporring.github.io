@@ -9,6 +9,10 @@
   <h2>Fourier Transformation Examples</h2>
   <p>The Fourier transform is a fundamental tool for understanding signal and image content, modeling, and filter design. On this page, you will find some simple examples illustrating simple relations between signal and images and their corresponding Fourier transform. The examples are made in Matlab R2021b. The Fourier spectrum is the function of lengths of the complex elements in the Fourier transform. In Matlab, this is calculated using the abs function. Also, in all examples, the fftshift function has been used to reorder the output of the fft function, such that the origin is in the center of the signal or image.</p>
 
+  <h3>The Fourier transform of a box is a sinc.</h3>
+  <img src="images/sinc.gif" alt="The box-sinc transform pair" class="center">
+  <p>Here you see an example of a 1D box function and its Fourier transform. Since the box is an even function, then its Fourier transform is real.</p>
+
   <h3>Approximating a 1 dimensional (1D) box function with limited frequencies.</h3>
   <img src="images/freq.gif" alt="Frequency approximation of a box function in 1D" class="center">
   <p>Here you see an example of a 1D box function and its Fourier spectrum using the fft and fftshift functions in Matlab. In the video, I iteratively remove high-frequency components symmetrically from the left and right.</p>
@@ -21,13 +25,21 @@
   <img src="images/gauss.gif" alt="Frequency approximation of a box function in 1D" class="center">
   <p>The Gauss function f(x) = exp(-x^2/(2 s^2))/sqrt(2 pi s^2), here of width s, is unqiue, since its Fourier transform, F, is also a Gauss function. The transformed has a width 1/s. Since F(0) = int f(x) dx, if the integral of f is constant then integral of F is not.</p>
 
-  <h3>The Fourier transformation implies periodicity, and hence, images are seen to lie on a torus</h3>
+  <h3>The Fourier series assume periodicity, and hence, images are seen to lie on a torus by fft</h3>
   <img src="images/imageWarp.gif" alt="Frequency approximation of a box function in 1D" class="center">
-  <p>A consequence of Fourier analysis is that images are modeled as being periodic. Hence, the right-most pixel's right neighbor is its left-most, and the top-most top neighbor is the bottom-most. Note that this animation correctly illustrates the topological relations of a flat image living on a torus, but the local distances are warped on the torus as compared to the flat image.</p>
+  <p>A consequence of Fourier series is that images are modeled as being periodic. Hence, the right-most pixel's right neighbor is its left-most, and the top-most top neighbor is the bottom-most. Note that this animation correctly illustrates the topological relations of a flat image living on a torus, but the local distances are warped on the torus as compared to the flat image.</p>
 
   <h3>A cosine wave corresponds to two symmetrical peaks in the Fourier domain</h3>
   <img src="images/noise.gif" alt="Frequency approximation of a box function in 1D" class="center">
   <p>An image with an added cosine wave will have 2 symmetrical peaks in the Fourier domain. Their location corresponds to the direction of the corresponding wave in the image, and the distance from the center in the Fourier domain corresponds inversely to the wavelength in the spatial domain.</p>
+
+  <h3>Reading the parameter of a cosine wave from the modified power spectrum</h3>
+  <img src="images/soundDenoise.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
+  <p>The coefficients of the original cosine functions can be retrieved by simple calculations with the power spectrum.</p>
+
+  <h3>Differentiation in the spatial domain is identical to multiplication with a monomial in the frequency domain</h3>
+  <img src="images/derivative.gif" alt="The derivative of a cosine fct is a sinus function." class="center">
+  <p>Differentiation in the spatial domain to any order is in practice filtering. Simple manipulations of the invers Fourier transform will reveal that the n'th order derivative in the spatial domain is the same as multiplication of a n'th degree monomial in the frequency domain.</p>
 
   <h3>Smoothing an image in the spatial domain removes high frequencies in the frequency domain</h3>
   <img src="images/smooth.gif" alt="Frequency approximation of a box function in 1D" class="center">
@@ -45,9 +57,48 @@
   <img src="images/channel.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
   <p>This is not an animated gif. Replacing the length of a Fourier transform of an image with a generic exp(-r) function does not completely destroy the image. However, replacing the angle component with independently and identically distributed noise does.</p>
 
+  <h3>Sampling a continuous signal is often modelled as a multiplication with a Dirac comb</h3>
+  <img src="images/diracComb.gif" alt="A Dirac comb" class="center">
+  <p>The Dirac comb is an infinit series of Dirac's delta functions, which are evenly spaced appart with a distance T. It is an even function and it's Fourier transform is also a Dirac comb (not shown here), and it's spacing is 1/T.</p>
+
+  <h3>Band-limited functions sampled with twice the nyquist frequency completely represents the orginal function</h3>
+  <img src="images/sampling.gif" alt="Sufficient and insufficent sampling of a simple function" class="center">
+  <p>A consequence of Nyquist's theorem is that for signals sampled with a sampling frequency below the Nyquist's critical frequency, the higher frequencies are wrapped and falsely identified as lower frequency. In this demo, the left column shows the correct frequencies in the power specturm while the right shows that the high frequencies bouncing back, when they cross Nyquist's critical frequency.</p>
+
   <h3>Aliasing - waves that cannot be distiquished when sampling</h3>
   <img src="images/nyquist.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
   <p>A given sampling frequency can only identify waves below the Nyquist frequency. Those above, cannot be distinguished from those below, i.e., the red and the blue curve meet at the sample points [0, pi, 2pi].</p>
+
+  <h2>Binary Mathematical Morphology Examples</h2>
+  <p>Mathematical morphology for binary images is a tool for working with neighbourhoods of white and black pixels. It is often used in conjunction with binary segmentation, where each pixel has been classified according to whether it belongs to a segment or not.</p>
+
+  <h3>Dilation as a ball rolling on the outer rim of an object</h3>
+  <img src="images/dilateRollingBall.gif" alt="Dilation animation" class="center">
+  <p>The effect of dilation with a disc-shaped structuring element can be envisioned as the locus of anchor points, here the center of the disc, as the element skims the surface on the outside of an object.</p>
+
+  <h3>Varying size of the structure elements for dilation</h3>
+  <img src="images/imdilateTest.gif" alt="Dilation using different sizes of structure elements" class="center">
+  <img src="images/imdilate2Test.gif" alt="Dilation using different sizes of structure elements" class="center">
+  <p>The size of the disc as a structure element influences the result of dilation: concave areas are filled and objects are joined.</p>
+
+  <h3>Erosion as a ball rolling on the inner rim of an object</h3>
+  <img src="images/erodeRollingBall.gif" alt="Erosion animation" class="center">
+  <p>The effect of erosion with a disc-shaped structuring element can be envisioned as the locus of anchor points, here the center of the disc, as the element skims the surface on the inside of an object.</p>
+
+  <h3>Varying size of the structure elements for erosion</h3>
+  <img src="images/imerodeTest.gif" alt="Erosion using different sizes of structure elements" class="center">
+  <img src="images/imerode2Test.gif" alt="Erosion using different sizes of structure elements" class="center">
+  <p>The size of the disc as a structure element influences the result of erosion: convex areas are cut off and small objects are deleted.</p>
+
+  <h3>Open = erosion followed by dilation</h3>
+  <img src="images/openTest.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
+  <img src="images/open2Test.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
+  <p>Erosion and dilation changes object's sizes dramatically. Counteracting an erosion with an ensuing dilation is the open operation. It has little effect for large objects and small structuring elements, while as the structure element grows, protrusions are separated into parts and eventually cut off and small objects are removed.</p>
+
+  <h3>Close = dilation followed by erosion</h3>
+  <img src="images/closeTest.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
+  <img src="images/close2Test.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
+  <p>Dilation and erosion changes object's sizes dramatically. Counteracting an dilation with an ensuing erosion is the close operation. It has little effect for large objects and small structuring elements, while as the structure element grows, concave areas are filled and objects are joined.</p>
 
   <footer>
   Jon Sporring, Professor, Ph.D., University of Copenhagen, <a href="mailto:sporring@di.ku.dk">sporring@di.ku.dk</a>, <a href="https://github.com/sporring">github.com/sporring</a>, <a href="https://orcid.org/0000-0003-1261-6702">ORCID: 0000-0003-1261-6702</a></td></tr>
