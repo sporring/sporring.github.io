@@ -100,6 +100,17 @@
   <img src="images/close2Test.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
   <p>Dilation and erosion changes object's sizes dramatically. Counteracting an dilation with an ensuing erosion is the close operation. It has little effect for large objects and small structuring elements, while as the structure element grows, concave areas are filled and objects are joined.</p>
 
+  <h3>Skeletonization of objects</h3>
+  <img src="images/skeleton.gif" alt="Random shapes and their skeletons" class="center">
+  <p>Identically and indepdendent distributed data (iid) smoothed and thresholded gives random shapes. The skeleton algorithm finds the locus of points of maximum circles that touch the object's boundary at least 2 places to at least 1st order (same location and same tangent). Bottom right image shows the reconstruction of the objects via the quench function, that is, the union of maximum circles centered on the skeleton.</p>
+  <h3>Caluculating the quench function</h3>
+  <img src="images/skeleton2.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
+  <p>A simple algorithm for calculating the quench function is to test circles centered an every skeleton point and seek the largest, for which the intersection is equal to the circle.</p>
+  <h3>Signed distance function and the watershed algorithm</h3>
+  <img src="images/skeleton3.gif" alt="The angle of the Fourier transform is strongly related to image content" class="center">
+  <p>The signed distance, here showed without sign and seperately for the inside and the outside, may be calculated by erosion and dilation, and it's ridges are the skeleton points. Followed further by the watershed algorithm identifies parts of objects, which are signified by local thinning of objects.</p>
+
+
   <footer>
   Jon Sporring, Professor, Ph.D., University of Copenhagen, <a href="mailto:sporring@di.ku.dk">sporring@di.ku.dk</a>, <a href="https://github.com/sporring">github.com/sporring</a>, <a href="https://orcid.org/0000-0003-1261-6702">ORCID: 0000-0003-1261-6702</a></td></tr>
 </footer>
