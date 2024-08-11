@@ -92,7 +92,7 @@ print(X)
 # the rpy2.robjects.language.LangVector.from_string functionality 
 robjects.globalenv["X"] = X
 sim = rpy2.robjects.language.LangVector.from_string('expression(runifpoint(ex=X))')
-env = ro.envelope(X, nsim=1999, savefuns=True, simulate=sim, verbose=False)
+env = ro.envelope(X, fun=ro.Lest, nsim=1999, savefuns=True, simulate=sim, verbose=False)
 res = ro.global_envelope_test(env)
 print(res) # Two type of data: attributes and elements in a double list
 print(base.attributes(res)) # the full list
@@ -106,8 +106,8 @@ hi = res.rx2('hi')
 r = res.rx2('r')
 obs = res.rx2('obs')
 central = res.rx2('central')
-plt.plot(r,lo, 'k--', 'LineWidth', 2)
-plt.plot(r,hi, 'k--', 'LineWidth', 2)
-plt.plot(r,central, 'k-', 'LineWidth', 2)
-plt.plot(r,obs, 'k-', 'LineWidth', 2)
+plt.plot(r,lo, 'k--')
+plt.plot(r,hi, 'k--')
+plt.plot(r,central, 'k-')
+plt.plot(r,obs, 'k-')
 plt.show()
